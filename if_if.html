@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let userid = prompt("아이디를 입력하세요.")
+    if(userid == "admin"){
+        document.write("해당 콘텐츠 이용이 가능합니다");
+    }
+    else{
+        level = level = Number(prompt("회원 레벨을 입력해 주세요."));
+        if(level>=1 && level<=7){
+            document.write("해당 콘텐츠 이용이 가능합니다!");
+        }
+        else{
+            document.write("해당 콘텐츠에 접근할 수 없습니다.!")
+        }
+    }
+</script>
+</html>
