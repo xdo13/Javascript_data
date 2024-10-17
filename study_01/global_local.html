@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // 아래 문장이 메서드안으로 들어가면 지역변수이므로 오류발생
+        let x = 10;
+        function func(){           
+            document.write(x+"<br>");
+        }
+        
+        func();
+        document.write(x+"<br>");
+
+    </script>
+    <meta charset="UTF-8">
+    <title>전역변수 실습</title>
+</head>
+<body>
+    
+</body>
+</html>

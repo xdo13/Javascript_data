@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        let d = new Date();
+        let year = d.getFullYear();
+        let month = d.getMonth();
+        month++;
+        let date = d.getDate();
+        let hour = d.getHours();
+        let minute = d. getMinutes();
+        let second = d.getSeconds();
+
+        document.write(year + "/" + month +"/" + date+ " - ");
+        document.write(hour + ":" + minute +":" + second);
+     
+        setInterval(function() {
+         location.reload();
+        }, 1000); // 5000ms = 5초
+
+    </script>
+    <meta charset="UTF-8">
+    <title>date 함수 사용</title>
+</head>
+<body>
+    
+</body>
+</html>
