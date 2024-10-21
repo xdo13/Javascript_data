@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭 메뉴 예제</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .tabs {
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        .tab-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .tab-links li {
+            margin-right: 5px;
+        }
+
+        .tab-links li a {
+            text-decoration: none;
+            padding: 10px 15px;
+            background: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .tab-links li.active a {
+            background: #fff;
+            border-bottom: none;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .tab {
+            display: none;
+        }
+
+        .tab.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <ul class="tab-links">
+            <li class="active"><a href="#tab1">탭 1</a></li>
+            <li><a href="#tab2">탭 2</a></li>
+            <li><a href="#tab3">탭 3</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="tab1" class="tab active">탭 1 내용</div>
+            <div id="tab2" class="tab">탭 2 내용</div>
+            <div id="tab3" class="tab">탭 3 내용</div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.tab-links a').on('click', function(e) {
+                e.preventDefault();
+
+                var target = $(this).attr('href');
+
+                $('.tab-links li').removeClass('active');
+                $(this).parent().addClass('active');
+
+                $('.tab').removeClass('active');
+                $(target).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

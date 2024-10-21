@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <!-- <script src="./javascript/jquery.6.0.js"></script> -->
+    <script>
+        $(document).ready(function(){
+            $(":text, :password").css("border","solid 1px black");
+            $(":button").css({"background-color":"gray","border":"solid 1px black"});
+            $(":submit, :reset").css({"background-color":"black","color" : "white","border": "solid 1px black"});
+            $(":radio, :checkbox").wrap("<span style='background-color:skyblue'></span>");
+            $("input:checked").wrap("<span style='background-color:violet'></span>");
+            $("option:selected").css("background-color","red");
+        });
+    </script>
+    <style>
+        ul {
+            list-style-type: none; 
+            padding: 0; 
+            margin: 0; 
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>메서드 사용 예</title>
+</head>
+<body>
+        <h2>회원 가입 양식</h2>
+        <form>
+            <ul>
+                <li>아이디 : <input type="text">
+                    <input type="button" value = "아이디 중복 체크"><p></p>
+                </li>
+                <li>이름 : <input type="text"><p></p>
+                </li>
+                <li>
+                    비밀번호 : <input type="password"><p></p>
+                </li>
+                <li>
+                    이메일 : <input type="text">@
+                    <select>
+                        <option value="naver">naver.com</option>
+                        <option value="hanmail" selected>hanmail.net</option>
+                        <option value="gmail">gmail.com</option>
+                    </select>
+                </li>
+                <li>
+                    <p></p>
+                    성별 : <input type="radio" name= "gender">
+                    남성 <input type="radio" name="gender" checked>여성<p></p>
+                </li>
+                <li>
+                    가입경로: <input type="checkbox" name = "h1" checked>인터넷
+                    <input type="checkbox" name = "h2"> 친구
+                    <input type="checkbox" name = "h3" checked> 기타
+                </li>
+                <div>
+                    <p></p>
+                    <input type="submit" value = "제출하기">
+                    <input type="reset" value = "입력취소">
+                </div>
+            </ul>
+        </form>
+
+</body>
+
+</html>
+

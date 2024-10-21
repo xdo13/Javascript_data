@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tabMenu</title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+	
+$(document).ready(function(e) {
+	
+    //제목(tab_title)을 클릭하면 제목과 같은 인덱스번호에 해당하는 내용(tab_content)나오기
+	$('#tab_title ul li').click(function() {
+		//클릭한 li의 인덱스번호를 num변수에 저장
+        var num=$(this).index();
+		//모든 제목의 active클래스 제거
+		$('#tab_title ul li').removeClass('active');
+		//num값과 같은 인덱스 번호에 해당하는 li에게만 액티브클래스 추가
+		$(this).addClass('active');
+		
+		
+		//tab_content 내용의 갯수만큼 반복되는 함수(each 이벤트)
+		$('#tab_content ul li').each(function() {
+			//만약에 num값과 tab_content의 인덱스번호가 같다면
+            if(num==$(this).index()){
+				//모든 #tab_content ul li 안보이게
+				$('#tab_content ul li').hide();
+				//num값과 인덱스번호가 같은 content만 보이게
+				$(this).fadeIn();
+			
+			}
+        });//each event end
+    });//클릭이벤트 끝
+	
+	$('#tab_content ul li').hide();
+	$('#tab_content ul li:first').show();
+	
+//기본함수 끝
+			
+	});
+</script>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+li { list-style:none; }
+#wrap {
+	width:100%;
+	height:554px;
+	background-color:#eee;
+	padding:100px 0;
+}
+#tab_menu {
+	width:1056px;
+	height:354px;
+	background-color:#fff;
+	margin:0 auto;
+}
+#tab_title {
+	height:44px;
+}
+#tab_title ul li {
+	float:left;
+	width:176px;
+	height:44px;
+	border-right:1px solid #666;
+	background-color:#333;
+	color:#fff;
+	line-height:44px;
+	text-align:center;
+}
+#tab_title ul li:last-child { border:none; }
+
+#tab_title ul li:hover { background-color:#666; }
+#tab_title ul li.active { background-color:#36F; }
+
+#tab_content {
+	width:1056px;
+	height:300px;
+	line-height:100px;
+	text-align:center;
+	background-color:#F6C;
+	margin-top:10px;
+	/*탭컨텐츠 ul li의 가출방지*/
+	position:relative;
+}
+#tab_content ul li {
+	width:1056px;
+	height:300px;
+	background-color:#36F;
+	color:#fff;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+</style>
+
+</head>
+
+<body>
+	<div id="wrap">
+    	<div id="tab_menu">
+        	<div id="tab_title">
+            	<ul>
+                	<li>HOME</li>
+                    <li>POST</li>
+                    <li>PHOTO</li>
+                    <li>VIDEO</li>
+                    <li>LINK</li>
+                    <li>EXIT</li>
+                </ul>
+            </div>
+            
+            <div id="tab_content">
+            	<ul>
+            		<li>Content_01</li>
+                    <li>게시글1<br>게시글2<br>게시글3</li>
+                    <li><img = id="image" src="/jQuery/10_17/cat2.jpg" width="500" height="300" alt="Description"></li>
+                    <li><video controls = id="video" src="/jQuery/tab_menu_example/small.webm "height="300" type="video/webm"></li>
+                    <li><a href="https://www.naver.com">네이버<br>
+						<a href="https://www.google.com">구글<br>
+							<a href="https://www.amazon.com">아마존
+						</a>
+					</li>
+                    <li><button onclick="showAlert()">페이지 닫기</button></li>
+                </ul>
+            </div>
+        </div><!--tab_menu end-->
+    </div>
+</body>
+</html>

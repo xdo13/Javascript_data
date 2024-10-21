@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <!-- <script src="./javascript/jquery.6.0.js"></script> -->
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#show1").text("안녕하세요");
+            });
+        
+            $("#btn2").dblclick(function(){
+                $("#show2").text("안녕하세요");
+            });
+            $("#btn3").mouseenter(function(){
+                $("#show3").text("안녕하세요");
+            });
+            $("#btn4").mouseleave(function(){
+                $("#show4").text("안녕하세요");
+            });
+        
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title>메서드 사용 예</title>
+</head>
+<body>
+        <button id ="btn1">클릭!</button>
+        <p id="show1"></p>        
+        <button id ="btn2">클릭!</button>
+        <p id="show2"></p>
+        <button id ="btn3">클릭!</button>
+        <p id="show3"></p>
+        <button id ="btn4">클릭!</button>
+        <p id="show4"></p>
+        <button id ="btn5">클릭!</button>
+        <p id="show5"></p>
+
+</body>
+
+</html>
